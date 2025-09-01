@@ -1,4 +1,5 @@
-from typing import Optional, Dict, Any, List
+from typing import Any, Dict, List, Optional
+
 from .base import BaseRouter
 
 
@@ -212,6 +213,7 @@ class BotOrchestrationRouter(BaseRouter):
             self,
             instance_name: str,
             credentials_profile: str,
+            account_config: str,
             controllers_config: List[str],
             max_global_drawdown_quote: Optional[float] = None,
             max_controller_drawdown_quote: Optional[float] = None,
@@ -244,6 +246,7 @@ class BotOrchestrationRouter(BaseRouter):
         controller_deployment = {
             "instance_name": instance_name,
             "credentials_profile": credentials_profile,
+            "account_config":  account_config,
             "controllers_config": controllers_config,
             "image": image
         }
