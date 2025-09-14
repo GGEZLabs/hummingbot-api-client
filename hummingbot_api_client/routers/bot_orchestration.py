@@ -217,6 +217,7 @@ class BotOrchestrationRouter(BaseRouter):
             controllers_config: List[str],
             max_global_drawdown_quote: Optional[float] = None,
             max_controller_drawdown_quote: Optional[float] = None,
+            headless:bool = True , 
             image: str = "hummingbot/hummingbot:latest"
     ) -> Dict[str, Any]:
         """
@@ -248,6 +249,7 @@ class BotOrchestrationRouter(BaseRouter):
             "credentials_profile": credentials_profile,
             "account_config":  account_config,
             "controllers_config": controllers_config,
+            "headless": headless, 
             "image": image
         }
         if max_global_drawdown_quote is not None:
